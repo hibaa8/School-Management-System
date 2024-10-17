@@ -37,8 +37,6 @@ public class Admin {
     }
 
     public void display() {
-        // System.out.println("\nAdmin Dashboard");
-        // System.out.print(toString());
         System.out.println("\nClasses");
         for (Class class1 : manager.getClasses()) {
             String output = class1.getName() + " -- Teacher: ";
@@ -140,7 +138,6 @@ public class Admin {
                 output += class1.getName() + ", ";
             }
             output += "\n";
-            // output += "On track: " + student.progressTracker() + "\n";
         }
         return output;
     }
@@ -240,7 +237,6 @@ public class Admin {
         display();
     }
 
-    // an initializer list used to create an array
     public void checkInbox() {
         System.out.println("\nYou have " + inbox.size() + " messages");
         for (String[] message : inbox) {
