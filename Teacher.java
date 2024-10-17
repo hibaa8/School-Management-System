@@ -217,7 +217,6 @@ public class Teacher {
             System.out.println(YELLOW + "\nAP course(y/n): " + RESET);
             String input = s.nextLine().toLowerCase();
             if (input.equals("y")) {
-                // Math.round(a * 100.0) / 100.0;
                 grade1 *= 1.1;
             } else {
                 grade1 = student.getGrade(class1);
