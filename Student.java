@@ -262,8 +262,6 @@ public class Student {
         }
     }
 
-    // used an array of primitive data and traversed it. Then I found the minimum
-    // maximum values in the array
     public boolean progressTracker() {
         int failing = 0;
 
