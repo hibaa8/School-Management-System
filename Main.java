@@ -188,7 +188,6 @@ public class Main {
         }
     }
 
-    // printed class objects
     public static void login(String username, String password, int user) {
         if (user == 1) {
             boolean studentFound = false;
