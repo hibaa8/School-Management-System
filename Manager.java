@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
-//class with instance variables but no constructor
+
 public class Manager {
     public static final String RESET = "\u001B[0m";
     public static final String BLACK = "\u001B[30m";
@@ -22,16 +22,6 @@ public class Manager {
     private ArrayList<Class> classes = new ArrayList<>();
     private static ArrayList<Admin> admins = new ArrayList<Admin>();
 
-    /**
-     * Precondition - Student object has two initialized instance variables,
-     * username
-     * and password, whose values are not null.
-     * Postcondition - This method makes a new class based on the subject the user
-     * inputs
-     * and assigns it to the student parameter and a new Teacher object.
-     * 
-     * @param student
-     */
 
     public void addClasses(Student student) {
         String output = "\nCurrent classes avaliable: ";
@@ -79,7 +69,6 @@ public class Manager {
                     Teacher teacher = newClass.getTeacher();
                     student.addTeacher(teacher);
                     teacher.addStudent(student);
-                    // student.setGrade(newClass, 100.0);
                 }
             }
         }
@@ -87,7 +76,6 @@ public class Manager {
 
     public void addNewStudent(Student student) {
         students.add(student);
-        // studentLoginInfo.put(student.getUsername(), student.getPassword());
         Scanner s = new Scanner(System.in);
         System.out.println(YELLOW + "\nName: " + RESET);
         student.setName(s.nextLine().toLowerCase());
@@ -129,12 +117,10 @@ public class Manager {
         System.out.println(YELLOW + "\nMajor: " + RESET);
         student.setMajor(s.nextLine());
         addClasses(student);
-        // student.display();
     }
 
     public void addTeacher(Teacher teacher) {
         teachers.add(teacher);
-        // teacherLoginInfo.put(teacher.getUsername(), teacher.getPassword());
         Scanner s = new Scanner(System.in);
         System.out.println(YELLOW + "\nName: " + RESET);
         teacher.setName(s.nextLine());
@@ -147,9 +133,7 @@ public class Manager {
         String addClass = s.nextLine().toLowerCase();
         teacher.setSubject(addClass);
         int i = 0;
-        // statement execution count
         int counter = 0;
-        // while loop
         while (i < classes.size()) {
             if (classes.get(i).getName().equalsIgnoreCase(addClass)) {
                 counter++;
@@ -170,23 +154,7 @@ public class Manager {
             classes.add(newClass);
         }
     }
-
-    // returns a object other than a string
-    /**
-     * Precondition - assumes the username, password, and manager have been
-     * initialized
-     * to values other than null.
-     * Postcondition - returns an Admin object that has values for username,
-     * password,
-     * name, and email. This object has also been assigned to a teacher and class
-     * and
-     * has acquired a manager object.
-     * 
-     * @param username
-     * @param password
-     * @param manager
-     * @return
-     */
+    
     public Admin addAdmin(String username, String password, Manager manager) {
         Admin admin = new Admin(username, password, manager);
         admins.add(admin);
